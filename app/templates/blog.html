@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+ <div class="container mt-5">
+        <h1 class="text-center mb-4">Анкета пользователя</h1>
+        <form method="post" action="/" class="mb-5">
+            <div class="form-group">
+                <label for="name">Имя</label>
+                <input id="name" type="text" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город</label>
+                <input id="city" type="text" name="city" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="hobby">Хобби</label>
+                <input id="hobby" type="text" name="hobby" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст</label>
+                <input id="age" type="number" name="age" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Заголовок поста</label>
+                <input id="title" type="text" name="title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="content">Текст поста</label>
+                <textarea id="content" name="content" rows="3" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Отправить</button>
+        </form>
+        <hr>
+        <h2 class="text-center mb-4">Посты</h2>
+        {% for post in posts %}
+        <div class="post mb-4 p-3 bg-light border rounded">
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
+ #подключает Bootstrap для стилизации
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
